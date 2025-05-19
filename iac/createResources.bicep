@@ -625,6 +625,7 @@ resource cartsapiaca 'Microsoft.App/containerApps@2022-06-01-preview' = {
       secrets: [
         {
           name: cartsApiAcaSecretAcrPassword
+          @secure()
           value: acr.listCredentials().passwords[0].value
         }
       ]
@@ -1447,6 +1448,7 @@ resource cartsinternalapiaca 'Microsoft.App/containerApps@2022-06-01-preview' = 
       secrets: [
         {
           name: cartsInternalApiAcaSecretAcrPassword
+          @secure()
           value: acr.listCredentials().passwords[0].value
         }
       ]
